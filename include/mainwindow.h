@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QFileDialog>
 
 class QAction;
 class QActionGroup;
@@ -15,21 +16,24 @@ class MainWindow;
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	explicit MainWindow(QWidget *parent = 0);
+	~MainWindow();
 
 private slots:
-     void about();
+	void openPCD();
+	void about();
 
 private:
-    Ui::MainWindow *ui;
-    void createActions();
-    void createMenus();
-    QMenu *helpMenu;
-    QAction *aboutAct;
+	Ui::MainWindow *ui;
+	void createActions();
+	void createMenus();
+	QMenu *helpMenu;
+	QMenu *fileMenu;
+	QAction *aboutAct;
+	QAction *openAct;
 };
 
 #endif // MAINWINDOW_H
